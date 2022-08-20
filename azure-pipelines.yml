@@ -27,14 +27,11 @@ stages:
         latest_httpd_release_on_mirror_repo=`sort -V mirror_htppd_list_file | tail -1`
         echo ${latest_httpd_release_on_mirror_repo}
         echo "done"
-        echo $(Pipeline.Workspace) # /__w/1
-        echo build directory # The local path on the agent where all folders for a given build pipeline are created. This variable has the same value as Pipeline.Workspace.
+        echo $(Pipeline.Workspace) 
         echo build directory $(Agent.BuildDirectory)
         echo home directory $(Agent.HomeDirectory)
         echo agent job name $(Agent.JobName)
         echo agent temp directory $(Agent.TempDirectory)
         echo agent work folder $(Agent.WorkFolder)
-        echo Build.SourcesDirectory # The local path on the agent where your source code files are downloaded. For example: c:\agent_work\1\s
         echo Build.SourcesDirectory $(Build.SourcesDirectory) 
-        echo Build.StagingDirectory # The local path on the agent where any artifacts are copied to before being pushed to their destination. For example: c:\agent_work\1
         echo Build.StagingDirectory $(Build.StagingDirectory) 
