@@ -10,4 +10,4 @@ pool:
 container: ubuntu:18.04
 
 steps:
-- script: echo " container"
+- script: printenv
