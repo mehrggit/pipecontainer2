@@ -12,4 +12,5 @@ container: ubuntu:18.04
 steps:
 - script: |
     echo "in container ---------------------------------"
+    ps -edaf
     echo "done"
