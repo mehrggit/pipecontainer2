@@ -24,7 +24,6 @@ stages:
         yum install epel-release -y 2> /dev/null
         yum install jq -y 2> /dev/null
         echo "yum done ----------------------------"
-#        printenv
         echo "in container ---------------------------------"
         pwd
         ls -ltR
