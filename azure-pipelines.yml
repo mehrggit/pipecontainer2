@@ -9,10 +9,5 @@ pool:
     
 container: ubuntu:18.04
 
-  jobs: 
-  - job: A
-    steps: 
-    - script: |
-        echo ${{ variables.PROJECT_PATH }}
-        echo "test"
-        echo ${{ variables.TIME_ZONE }}
+steps:
+- script: echo " container"
