@@ -25,7 +25,7 @@ stages:
         yum install epel-release -y 2> /dev/null
         yum install jq -y 2> /dev/null
         which jq
-        /usr/bin/jq -v
+        /usr/bin/jq --version
         echo "yum done ----------------------------"
         echo "in container ---------------------------------"
         pwd
