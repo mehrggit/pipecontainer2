@@ -12,7 +12,4 @@ container: centos:latest
 jobs:
 - job: container_job
   steps:
-  - script: |
-    echo "in container ---------------------------------"
-    pwd
-    ls -ltR
+  - script: echo "in container ---------------------------------"
