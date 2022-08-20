@@ -9,7 +9,8 @@ pool:
     
 container: centos:latest
 
+
 jobs:
-- job: container_job
+- job: RunInContainer
   steps:
-  - script: echo "in container ---------------------------------"
+  - script: printenv
