@@ -1,0 +1,4 @@
+variables:
+   PROJECT_PATH: 'http://mirror.csclub.uwaterloo.ca/apache/httpd/'
+   TIER: 'STAGE'
+   TIME_ZONE: 'Pacific Time'
