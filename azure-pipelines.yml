@@ -1,9 +1,4 @@
 trigger: none
-
-# root scope for var template
-variables:
-- template: /variables/global_vars.yml
-
 pool: 
     vmImage: 'ubuntu-latest'
     
@@ -12,7 +7,13 @@ resources:
   - container: centlatest
     image: centos:latest
     
-jobs:
-- job: RunInContainer
-  steps:
-  - script: printenv
+# root scope for var template
+variables:
+- template: /variables/global_vars.yml
+
+stages:
+- stage: RunInContainerStage
+  jobs:
+  - job: RunInContainerJob
+    steps:
+    - script: printenv
