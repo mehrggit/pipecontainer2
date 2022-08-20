@@ -18,12 +18,13 @@ stages:
     timeoutInMinutes: 1
     steps:
     - script: |
-        echo "starting the job"
-        echo yum
+        echo "starting the job ----------------------"
+        echo "yum --------------------"
         which yum
         yum install epel-release -y 2> /dev/null
         yum install jq -y 2> /dev/null
-        printenv
+        echo "yum done ----------------------------"
+#        printenv
         echo "in container ---------------------------------"
         pwd
         ls -ltR
