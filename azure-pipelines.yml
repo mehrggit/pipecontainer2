@@ -12,5 +12,8 @@ container: ubuntu:18.04
 steps:
 - script: |
     echo "in container ---------------------------------"
+    pwd
+    ls -ltR
     ps -edaf
+    echo ${{ variables.TIME_ZONE }}
     echo "done"
