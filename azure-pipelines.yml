@@ -9,13 +9,6 @@ pool:
     
 container: ubuntu:18.04
 
-stages:
-- stage: Release_Stage 
-  displayName: Release Version
-  variables:                                # stage scope for variable template
-  - template: /variables/global_vars.yml
-  - name: TIME_ZONE                         # overwrite template variable with stage one
-    value: INDIA
   jobs: 
   - job: A
     steps: 
