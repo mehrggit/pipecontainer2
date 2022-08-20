@@ -18,6 +18,6 @@ stages:
   - job: A
     steps: 
     - script: |
-        echo ${{ variables.APACHE_HTTPD_MIRROR_PATH }}
+        echo ${{ variables.PROJECT_PATH }}
         echo "test"
         echo ${{ variables.TIME_ZONE }}
