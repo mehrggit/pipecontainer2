@@ -7,9 +7,11 @@ variables:
 pool: 
     vmImage: 'ubuntu-latest'
     
-container: centos:latest
-
-
+resources:
+  containers:
+  - container: centlatest
+    image: centos:latest
+    
 jobs:
 - job: RunInContainer
   steps:
