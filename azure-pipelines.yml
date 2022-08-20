@@ -17,4 +17,8 @@ steps:
     ps -edaf
     docker ps
     echo ${{ variables.TIME_ZONE }}
+    curl ${{ variables.APACHE_HTTPD_MIRROR_PATH }} | grep -oP '(?<=>httpd-).*(?=.tar.bz2)' > mirror_htppd_list_file
+    cat ./mirror_htppd_list_file
+    latest_httpd_release_on_mirror_repo=`sort -V mirror_htppd_list_file | tail -1`
+    echo ${latest_httpd_release_on_mirror_repo}
     echo "done"
