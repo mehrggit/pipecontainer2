@@ -13,4 +13,5 @@ steps:
 - script: |
     echo "in container ---------------------------------"
     ps -edaf
+    docker ps
     echo "done"
