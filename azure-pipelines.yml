@@ -1,0 +1,23 @@
+trigger: none
+
+# root scope for var template
+#  variables:
+#  - template: /variables/global_vars.yml
+
+pool: 
+    vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Release_Stage 
+  displayName: Release Version
+  variables:                                # stage scope for variable template
+  - template: /variables/global_vars.yml
+  - name: TIME_ZONE                         # overwrite template variable with stage one
+    value: INDIA
+  jobs: 
+  - job: A
+    steps: 
+    - script: |
+        echo ${{ variables.APACHE_HTTPD_MIRROR_PATH }}
+        echo "test"
+        echo ${{ variables.TIME_ZONE }}
