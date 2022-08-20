@@ -16,7 +16,4 @@ stages:
   jobs:
   - job: RunInContainerJob
     steps:
-    - script: 
-      printenv
-      echo "in container ---------------------------------"
-
+    - script: printenv
