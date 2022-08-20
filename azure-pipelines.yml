@@ -19,6 +19,7 @@ stages:
     steps:
     - script: |
         uname -a
+        printenv | grep reason
         echo "starting the job ----------------------"
         echo "yum --------------------"
         which yum
