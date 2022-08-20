@@ -16,7 +16,8 @@ stages:
   jobs:
   - job: RunInContainerJob
     steps:
-    - script: printenv
+    - script: 
+        printenv
         echo "in container ---------------------------------"
         pwd
         ls -ltR
