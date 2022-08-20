@@ -18,6 +18,7 @@ stages:
     timeoutInMinutes: 1
     steps:
     - script: |
+        uname
         echo "starting the job ----------------------"
         echo "yum --------------------"
         which yum
