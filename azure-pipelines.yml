@@ -17,22 +17,6 @@ stages:
   - job: RunInContainerJob
     steps:
     - script: 
-        printenv
-        echo "in container ---------------------------------"
-        pwd
-        ls -ltR
-        ps -edaf
-        echo ${{ variables.TIME_ZONE }}
-        curl ${{ variables.APACHE_HTTPD_MIRROR_PATH }} | grep -oP '(?<=>httpd-).*(?=.tar.bz2)' > mirror_htppd_list_file
-        cat ./mirror_htppd_list_file
-        latest_httpd_release_on_mirror_repo=`sort -V mirror_htppd_list_file | tail -1`
-        echo ${latest_httpd_release_on_mirror_repo}
-        echo "done"
-        echo $(Pipeline.Workspace) 
-        echo build directory $(Agent.BuildDirectory)
-        echo home directory $(Agent.HomeDirectory)
-        echo agent job name $(Agent.JobName)
-        echo agent temp directory $(Agent.TempDirectory)
-        echo agent work folder $(Agent.WorkFolder)
-        echo Build.SourcesDirectory $(Build.SourcesDirectory) 
-        echo Build.StagingDirectory $(Build.StagingDirectory) 
+      printenv
+      echo "in container ---------------------------------"
+
