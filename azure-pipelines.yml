@@ -20,7 +20,8 @@ stages:
     - script: |
         uname -a
         printenv | grep reason
-        echo "starting the job ----------------------"
+        printenv
+        echo "starting the job ---------------------------------------"
         echo "yum --------------------"
         which yum
         yum install epel-release -y 2> /dev/null
