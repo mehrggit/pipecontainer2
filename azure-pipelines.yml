@@ -1,8 +1,8 @@
 trigger: none
 
 # root scope for var template
-#  variables:
-#  - template: /variables/global_vars.yml
+variables:
+- template: /variables/global_vars.yml
 
 pool: 
     vmImage: 'ubuntu-latest'
@@ -13,5 +13,4 @@ steps:
 - script: |
     echo "in container ---------------------------------"
     ps -edaf
-    docker ps
     echo "done"
