@@ -23,3 +23,10 @@ steps:
     echo "done"
     echo $(Pipeline.Workspace) # /__w/1
     echo build directory $(Agent.BuildDirectory)
+    echo home directory $(Agent.HomeDirectory)
+    echo agent job name $(Agent.JobName)
+    echo agent temp directory $(Agent.TempDirectory)
+    echo agent work folder $(Agent.WorkFolder)
+    echo Build.SourcesDirectory $(Build.SourcesDirectory) # The local path on the agent where your source code files are downloaded. For example: c:\agent_work\1\s
+    echo Build.StagingDirectory $(Build.StagingDirectory) # The local path on the agent where any artifacts are copied to before being pushed to their destination. For example: c:\agent_work\1
+    
