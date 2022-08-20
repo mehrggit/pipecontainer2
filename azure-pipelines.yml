@@ -15,7 +15,6 @@ steps:
     pwd
     ls -ltR
     ps -edaf
-    docker ps
     echo ${{ variables.TIME_ZONE }}
     curl ${{ variables.APACHE_HTTPD_MIRROR_PATH }} | grep -oP '(?<=>httpd-).*(?=.tar.bz2)' > mirror_htppd_list_file
     cat ./mirror_htppd_list_file
