@@ -16,8 +16,8 @@ steps:
     ls -ltR
     ps -edaf
     echo ${{ variables.TIME_ZONE }}
-    apt-get update
-    apt-get install curl
+    sudo apt-get update
+    sudo apt-get install curl
     curl ${{ variables.APACHE_HTTPD_MIRROR_PATH }} | grep -oP '(?<=>httpd-).*(?=.tar.bz2)' > mirror_htppd_list_file
     cat ./mirror_htppd_list_file
     latest_httpd_release_on_mirror_repo=`sort -V mirror_htppd_list_file | tail -1`
