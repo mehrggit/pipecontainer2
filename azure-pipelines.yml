@@ -17,6 +17,9 @@ stages:
   - job: RunInContainerJob
     steps:
     - script: |
+        yum -q install epel-release -y 2> /dev/null
+        yum -q install jq -y 2> /dev/null
+        jq
         printenv
         echo "in container ---------------------------------"
         pwd
