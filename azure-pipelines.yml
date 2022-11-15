@@ -29,6 +29,7 @@ stages:
     steps:
     - script: |
         uname -a
+        docker ps
         printenv | grep reason
         printenv
         echo "starting the job ---------------------------------------"
