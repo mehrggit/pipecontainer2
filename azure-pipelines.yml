@@ -26,15 +26,7 @@ stages:
           mehrdad.hazeghi@nuance.com
         instructions: 'Important: Activate ONLY AFTER confirming the Lab pipeline has run and verifying the run results/logs!!!'
         onTimeout: 'resume'
-  - job: fail_pipeline
-    displayName: Fail Pipeline On Manual Validation Refusal
-    container: terraform_image_container
-    dependsOn: validate_jdk_preview_lab
-    condition: failed()
-    steps:
-    - script: |
-        echo "manual validaton of lab preview pipeline failed, exiting the pipeline"
-        exit 1
+
 - stage: RunInContainerStage
   jobs:
   - job: RunInContainerJob
