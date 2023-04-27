@@ -27,11 +27,19 @@ stages:
         instructions: 'Important: Activate ONLY AFTER confirming the Lab pipeline has run and verifying the run results/logs!!!'
         onTimeout: 'resume'
 
-- stage: RunInContainerStage
+- stage: RunInContainerStage1
   jobs:
-  - job: RunInContainerJob
+  - job: RunInContainerJob1
     timeoutInMinutes: 1
     steps:
     - script: |
-        echo "RunInContainerStage RunInContainerStage RunInContainerStage RunInContainerStage RunInContainerStage RunInContainerStage"
+        echo "RunInContainerStage1 RunInContainerStage1 RunInContainerStage1 RunInContainerStage1 RunInContainerStage1 RunInContainerStage1"
+
+- stage: RunInContainerStage2
+  jobs:
+  - job: RunInContainerJob2
+    timeoutInMinutes: 1
+    steps:
+    - script: |
+        echo "RunInContainerStage2 RunInContainerStage2 RunInContainerStage2 RunInContainerStage2 RunInContainerStage2 RunInContainerStage2"
 
