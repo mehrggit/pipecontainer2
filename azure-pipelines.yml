@@ -28,6 +28,8 @@ stages:
         onTimeout: 'resume'
 
 - stage: RunInContainerStage1
+  condition: succeeded()
+  dependsOn: validate_jdk_preview_lab
   jobs:
   - job: RunInContainerJob1
     timeoutInMinutes: 1
