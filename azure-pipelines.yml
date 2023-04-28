@@ -9,19 +9,25 @@ resources:
   - container: terraform_image_container2
     image: artifactory-va.staging.nod.nuance.com:8443/infra-docker-repo-virtual/terraform:1.1.9-0.0.67
 
-jobs:
-- job: RunInContainer
+stages:
+- stage: stage1
+# https://stackoverflow.com/questions/72639354/azure-devops-yaml-pipeline-stage-to-depend-on-other-pipeline-completion
+  jobs:
+  - job: stage1_job1
+    container: terraform_image_container2
+    steps:
+    - script: |
+        echo "stage1_job1"
 
-  strategy:
-    matrix:
-      terraform1:
-        containerResource: terraform_image_container1
-      terraform2:
-        containerResource: terraform_image_container1
+- stage: stage2
+# https://stackoverflow.com/questions/72639354/azure-devops-yaml-pipeline-stage-to-depend-on-other-pipeline-completion
+  jobs:
+  - job: stage2_job1
+    container: terraform_image_container2
+    steps:
+    - script: |
+        echo "stage2_job1"
 
 
-  container: $[ variables['containerResource'] ]
 
-  steps:
-  - script: printenv
 
