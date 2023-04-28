@@ -4,10 +4,10 @@ pool: ivr-stage-va
     
 resources:
   containers:
- - container: terraform_image_container1
-   image: $(terraform_image)
- - container: terraform_image_container2
-   image: $(terraform_image)
+  - container: terraform_image_container1
+    image: $(terraform_image)
+  - container: terraform_image_container2
+    image: $(terraform_image)
 
 jobs:
 - job: RunInContainer
